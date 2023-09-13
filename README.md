@@ -7,3 +7,12 @@ This repo will be my complete dive into the realm of Web Development. This repo 
 # How I will use this
 Of course this will be used to learn Web Development and broaden my skills in this arean using a variety of tools and languages. Furthermore, as we all know there are patterns that come up when coding and this repo can contain code that I can reference for future web projects
 
+# Ordinary
+Big or small, high or low, this is where I begin my journey. I am still relativley a beginner and hope to grow my skills in the web application world. I will not go to deep just yet. 
+
+# CallTo
+
+# Refusal
+
+
+
