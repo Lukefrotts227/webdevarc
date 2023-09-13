@@ -27,14 +27,14 @@ def index():
         name = request.form['name']
         name = name.lower()
         if not name in data:
-            data[name] = Person(name)
-            return redirect(url_for('next', name=name))
+            data[name] = Person(name.strip())
+            return redirect(url_for('next', name=name.strip()))
     
         elif name in data: 
-            return redirect(url_for('next', name=name)) 
+            return redirect(url_for('next', name=name.strip())) 
         
         elif name in data and data[name].new == True: 
-            return redirect(url_for('main', name=name))
+            return redirect(url_for('main', name=name.strip()))
 
     return render_template('index.html')
 
@@ -45,9 +45,9 @@ def next(name):
         club = request.form['club']
         data[name].add_club(club)
         print("here")
-        return redirect(url_for('main', name=name))
+        return redirect(url_for('main', name=name.strip()))
 
-    return render_template('next.html', name = rename)
+    return render_template('next.html', name = rename.strip())
 
 @app.route('/change/<name>', methods=['GET', 'POST'])
 def change(name): 
@@ -56,15 +56,16 @@ def change(name):
     if request.method == 'POST': 
         club = request.form['club']
         data[name].add_club(club)
-        return redirect(url_for('main', name=name))
+        return redirect(url_for('main', name=name.strip()))
 
     
-    return render_template('change.html', name= rename, club = club)
+    return render_template('change.html', name= rename.strip(), club = club.strip())
 
 @app.route('/main/<name>', methods=['GET', 'POST'])
 def main(name):
-    club = data[name].club
-    rename = name.title()
+    club = data[name].club.strip()
+    rename = name.title().strip()
+    
 
 
     return render_template('main.html', name = rename, club = club)
