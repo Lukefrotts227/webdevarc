@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+        <title>Change</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+
+    <body> 
+        <h1>Welcome to the Change page {{ name }}!!</h1> 
+        <h2>Your current club is {{ club }}</h2>
+        <form method="POST", action="">
+            <label for="club">Enter your Club Choice:</lable>
+            <select id="club" name="club">
+                <option value="Writing"> </option>
+                <option value="Basketball"> </option> 
+                <option value="Yoga"> </option> 
+                <option value="Math"> </option>
+            </select>
+            <input type="submit" value="Submit">
+        
+            </form>
+    </body> 
+</html>

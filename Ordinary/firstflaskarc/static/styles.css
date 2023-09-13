@@ -1,8 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #5f5959;
 }
 
 h1 {
     color: hsl(270, 62%, 45%);
 }
+
+ 
+h2 {
+        color: hwb(270, 45%, 5%);
+}
+
