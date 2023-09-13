@@ -31,7 +31,7 @@ def index():
         return redirect(url_for('next', name=name)) 
     
     elif request.method == 'POST' and name in data and data[name].new == True: 
-        pass
+        return redirect(url_for('main', name=name))
 
     return render_template('index.html')
 
@@ -43,6 +43,10 @@ def next(name):
         data[name].add_club(club)
 
     return render_template('next.html', name=rename)
+
+@app.route('/change/<name>', mehtods=['GET', 'POST'])
+def change(name): 
+    pass
 
 @app.route('/main/<name>', methods=['GET', 'POST'])
 def main(name):
