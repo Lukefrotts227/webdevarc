@@ -11,8 +11,7 @@ class Person:
     def add_club(self, club): 
         self.club = club
         self.new = False
-    def write_to(self): 
-        pass
+    
     
 
 
@@ -26,6 +25,9 @@ def index():
     
         name = request.form['name']
         name = name.lower()
+        if name == 'admin': 
+            return redirect(url_for('admin'))
+
         if not name in data:
             data[name] = Person(name.strip())
             return redirect(url_for('next', name=name.strip()))
@@ -37,6 +39,10 @@ def index():
             return redirect(url_for('main', name=name.strip()))
 
     return render_template('index.html')
+
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    return render_template('admin.html', elements=data) 
 
 @app.route('/next/<name>', methods=['GET', 'POST'])
 def next(name): 

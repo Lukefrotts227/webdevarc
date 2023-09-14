@@ -7,7 +7,10 @@
 
     <body>
         <h1>Welcome to The Main Page {{ name }}</h1> 
-        <a href="{{ url_for('change', name=name.lower()) }}">Change the club</a>
+        <h2> You are a memeber of the {{ club }} club </h2> 
+        <a href="{{ url_for('change', name=name.lower()) }}">
+            <button>Change the Club</button>
+        </a>
     
     </body> 
 
