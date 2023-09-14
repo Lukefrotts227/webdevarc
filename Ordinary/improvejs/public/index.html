@@ -7,7 +7,23 @@
     </head>
 
     <body>
-        <h1>This is a header</h1>
+        <h1 id="colorToChange">This is a header</h1>
+
+        <form id = "colorForm"> 
+            <label for="colorInput">Choose a color: </label>
+            <input type="color" id="colorInput" name="colorInput">
+            <input type="submit" value="Change Header Color">
+        </form>
+
+
+        <div class="dropdown">
+            <button class="dropdown-button">Menu</button>
+            <div class="dropdown-content">
+                <button>first one</button>
+                <button>second one</button>
+                <button>third one</button>
+            </div>
+        </div>
 
         <script src="/script.js"></script>
 
