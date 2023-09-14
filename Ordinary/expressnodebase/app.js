@@ -5,13 +5,12 @@ const app = express();
 const port = 3000; 
 
 
-app.get('/', (req, res) => {
-    res.send('Hello there express!!!'); 
-})
+app.use(express.static('public'));
 
-app.get('/myRoute', (req, res) => {
-    res.send("This is my own route thank you for coming here today!!!!!"); 
-})
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html'); 
+}); 
+
 
 app.listen(port, () =>{
     console.log(`Server is running on port ${port}`);

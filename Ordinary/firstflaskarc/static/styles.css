@@ -12,26 +12,7 @@ h2 {
     color: hwb(270, 45%, 5%);
 }
 
-.top-index{
-     
-    top: 25; 
-    left: 0
-}
 
 
-.animated-element {
-  
-    background-color: rgb(21, 78, 72);
-    top: 0;
-    left: 0;
-    width: 35%; /* Set a fixed width */
-    height: 14%; 
-    animation: spin .5s; /* Apply the animation */
-}
 
-/* Define the keyframes for the animation */
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
 

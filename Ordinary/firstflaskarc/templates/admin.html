@@ -3,6 +3,7 @@
     <head>
         <title>Admin</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
     </head>
 </html>
 
@@ -10,7 +11,7 @@
     <h1>Welcome to The Admin Page</h1>
 
     <ul>
-        {% for key, value in elements.items().club() %}
+        {% for key, value in elements.items().club %}
         <li>{{ key }}: {{ value }}</li>
         {% endfor %}
     </ul> 
