@@ -1,4 +1,9 @@
 /* Style for the game board */
+
+body{
+    background: linear-gradient(to bottom, #888888, #ffffff);
+}
+
 .board {
     border-collapse: collapse;
     margin: 20px auto;

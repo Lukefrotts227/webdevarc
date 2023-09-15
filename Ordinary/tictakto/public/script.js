@@ -29,7 +29,9 @@ function handleCellClick(event){
     const col = cell.cellIndex;
     if(!canPut(board, row, col)){
         alert("Cannot place go there!!"); 
+        console.log('path1')
     }else{
+        console.log('path2')
         const winner = checkOutcome(board, row, col); 
         if(winner){
             if(winner === 'X'){
@@ -58,7 +60,7 @@ function checkWinnerPrim(player, board, row, col){
 
 function checkWinner(board, row, col){
     // check X
-    
+    return null;
 
     // check O
 
