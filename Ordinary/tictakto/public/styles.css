@@ -1,15 +1,74 @@
+/* Style for the game board */
+.board {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
 
+.board td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 44px;
+    font-weight: bold;
+    border: 4px solid #333;
+    cursor: pointer;
+}
 
-.title{
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.board td:hover {
+    background-color: #eee;
+}
+
+/* Style for the title */
+.title {
+    text-align: center;
+    font-size: 44px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.center-reset-button{
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    height: 40vh; 
+}
+
+.reset-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
 
 }
 
-.board{
-    position: absolute; 
-    top:50%;
-    right:45%;
+/* Hover effect */
+.reset-button:hover {
+    background-color: #2980b9;
+    animation: spin 1s infinite linear; 
+}
+
+@keyframes spin{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.board td::after {
+    content: attr(data-symbol); /* Display the 'X' or 'O' value set in data-symbol attribute */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.board td[data-symbol='O']::after {
+    color: #6495ed; /* Blue color for 'O' */
+}
+
+.board td[data-symbol='X']::after {
+    color: #ff6347; /* Red color for 'X' */
 }
