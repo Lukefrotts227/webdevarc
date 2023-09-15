@@ -1,14 +1,14 @@
 # webdevarc
-Repo containing my web development ventures
+This repository contains my web development ventures.
 
 # What is the Deal
-This repo will be my complete dive into the realm of Web Development. This repo will be filled with projects and mini-projects. 
+This repository represents my deep dive into the world of web development. It will be filled with various projects and mini-projects, and my goal is to explore as many aspects as possible to become a proficient web developer.
 
 # How I will use this
-Of course this will be used to learn Web Development and broaden my skills in this arean using a variety of tools and languages. Furthermore, as we all know there are patterns that come up when coding and this repo can contain code that I can reference for future web projects
+This repository serves as a platform for learning web development and expanding my skills in this field. I'll be using a variety of tools and programming languages. Additionally, coding often involves recurring patterns, and this repository will store code that I can refer to for future web projects.
 
 # Ordinary
-Big or small, high or low, this is where I begin my journey. I am still relativley a beginner and hope to grow my skills in the web application world. I will not go to deep just yet. 
+Whether big or small, high or low, this marks the beginning of my journey. I'm still relatively a beginner and aspire to enhance my skills in the world of web applications. I won't dive too deep just yet. The training wheels are on to an extent. 
 
 # CallTo
 
