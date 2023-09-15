@@ -27,12 +27,23 @@ function handleCellClick(event){
     const cell = event.target; 
     const row = cell.parentElement.rowIndex; 
     const col = cell.cellIndex;
-
-    const winner = checkOutcome(board, row, col); 
-    if(winner){
-        
+    if(!canPut(board, row, col)){
+        alert("Cannot place go there!!"); 
     }else{
-        currentPlayer = swapPlayer(currentPlayer); 
+        const winner = checkOutcome(board, row, col); 
+        if(winner){
+            if(winner === 'X'){
+                alert("X is the winner"); 
+                resetGame(); 
+            }else{
+                alert("O is the winner"); 
+                resetGame(); 
+            }
+            
+        }else{
+            cell.textContent = currentPlayer; 
+            currentPlayer = swapPlayer(currentPlayer); 
+        }
     }
 
 }
@@ -41,10 +52,30 @@ function canPut(board, row, col){
     return board[row][col] === ''; 
 }
 
+function checkWinnerPrim(player, board, row, col){
+
+}
+
+function checkWinner(board, row, col){
+    // check X
+    
+
+    // check O
+
+    if(out1){
+
+    }
+
+    else if(out2){
+
+    }else{
+
+    }
+}
+
 function checkOutcome(board, row, col){
 
-
-    return null; 
+    return checkWinner(board, row, col); 
 
 }
 
