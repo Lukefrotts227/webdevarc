@@ -1,5 +1,6 @@
 // tailwind.config.js
 module.exports = {
+  content: ["./src/**/*.{html,js}"],
   purge: [
     './public/**/*.html',
     './src/**/*.js',
