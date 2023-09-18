@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html> 
+    <head> 
+        <title>My notes app on the browser local storage</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body> 
+        <h1>This is an app the uses session storage to take notes</h1>
+
+        <div class="note-title-div" id="note-title-div">
+            <label for="note-title">Title:</label>
+            <input type="text" class="note-title" id="note-title"> 
+        </div>
+
+        <div class="notes-body-div" id="note-body-div"> 
+            <label for="notes-body">Note:</label>
+            <textarea class="notes-body" id="notes-body" rows="4"></textarea>
+        </div>
+
+        <button onclick="createNote()">Create Note</button>
+        <ul id="notes-list" class="notes-list"></ul>
+
+        <script src="script.js"></script>
+    </body>
+
+
+</html>

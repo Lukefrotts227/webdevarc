@@ -1,0 +1,30 @@
+h1{ 
+    color: black
+
+}
+p{ 
+    color: blue;  
+}
+body{
+    background : radial-gradient(gray, green);
+}
+
+
+.note-title.div{
+    display:flex; 
+}
+
+.note-body-div{
+    display:flex; 
+
+}
+
+.list-element{
+    background: linear-gradient(to right, gray, white); 
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+}
+.list-element:hover{
+    cursor:crosshair; 
+}
