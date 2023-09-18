@@ -4,7 +4,6 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const path = require('path');
 
 const app = express(); 
 
@@ -30,10 +29,29 @@ const UserSchema = new mongoose.Schema({
 });
 const UserModel = mongoose.model('User', UserSchema); 
 
+passport.use(
+    new LocalStrategy(async (username, password, done) => {
+        try{
+            const user = await UserModel.findOne({ username }); 
+            if(!user) return done(null, false); 
+
+            const validPassword = await bcrypt.compare(password, user.password); 
+            if(!validPassword) return done(null, false); 
+
+            return (null, user); 
+
+        }catch(error) {
+            return done(error, false); 
+        }
+    })
+); 
+
 
 const Routes = {
+    index: '/',
     register: '/auth/register', 
-    login: '/auth/login'
+    login: '/auth/login', 
+    success: '/page/success', 
 }; 
 
 
@@ -43,12 +61,44 @@ mongoose.connection.on('error', (err) => {
   });
 
 
-app.use(express.static(__dirname + 'public')); 
+app.use(express.static('public')); 
 
+app.set('jwtSecret', secret); 
 
-app.get('/', (req, res) =>{
-    res.sendFile(__dirname + '/pubic/index.html'); 
+app.post(Routes.register, async (req, res) => {
+    const { username, password } = req.body; 
+
+    try{
+
+        const hashedPassword = await bcrypt.hash(password, 10); 
+        const newUser = new UserModel({ username, password: hashedPassword }); 
+
+        await newUser.save(); 
+
+        res.status(201).json({ message: 'Registered!!'}); 
+
+    } catch(error) {
+        console.error("Error:", error); 
+        res.status(500).json({ error: 'Failed to register' }); 
+    }
 }); 
+
+app.post(Routes.login, passport.authenticate('local', {session: false }), (req, res) => {
+    const user = req.user; 
+    const token = jwt.sign({ sub: user._id }, app.get('jwtSecret')); 
+    res.json({ token }); 
+});
+
+
+app.get(Routes.index, (req, res) =>{
+    res.sendFile(__dirname + '/public/index.html'); 
+}); 
+
+app.get(Routes.success, passport.authenticate('jwt', { session: false }) ,(req, res) => {
+    res.sendFile(__dirname + '/public/main.html');
+}); 
+
+
 
 
 app.listen(port, () =>{
