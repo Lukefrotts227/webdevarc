@@ -1,0 +1,127 @@
+body {
+    background: linear-gradient(to right, gray, white);
+    display: flex; /* Center everything vertically and horizontally */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh; /* Use 100% of the viewport height */
+    margin: 0; /* Remove default body margin */
+
+}
+
+.index-container{
+    text-align: center;
+    margin-top: 5vh; 
+}
+
+.title-container{
+    background: radial-gradient(purple, red); 
+    padding: 13%; 
+    border-radius: 8%;
+    box-shadow: 0 0 8% rgba(0, 0, 0, 0.3);
+    animation: morePulse 1.2s ease-in; 
+}
+
+.title{
+    margin: 0; 
+    animation: myFunAni 1.2s ease-in; 
+}
+
+
+
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; 
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes myFunAni {
+    0% {
+        transform: scale(1.5); 
+        opacity: 0; 
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(100%); 
+    }
+
+    100% {
+        transform: translateX(100%); 
+        transform: scale(1); 
+    }
+
+  }
+
+  @keyframes morePulse {
+    0% {
+        transform: scale(1); 
+    }
+    25% {
+        transform: scale (2.25); 
+    }
+    50% {
+        transform: scale(2.75); 
+    }
+    75% {
+        transform: scale(2.25); 
+    }
+    100% {
+        transform: scale(1); 
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  
+  
