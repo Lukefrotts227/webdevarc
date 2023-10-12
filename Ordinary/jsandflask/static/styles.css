@@ -21,6 +21,9 @@ body {
     box-shadow: 0 0 8% rgba(0, 0, 0, 0.3);
     animation: morePulse 1.2s ease-in; 
 }
+.title-container:hover{
+    animation: miniPulse 0.75s; 
+}
 
 .title{
     margin: 0; 
@@ -120,6 +123,15 @@ body {
     100% {
       transform: translateX(0);
       opacity: 1;
+    }
+  }
+
+  @keyframes miniPulse{
+    0%{
+        transform: scale(1.5); 
+    }
+    100%{
+        transform: scale(1); 
     }
   }
 
