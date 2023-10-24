@@ -11,7 +11,7 @@ export default function NextPage(){
             </header>
 
             <Link href="/">
-                <section className ={`w-44 ${button1}}`}> 
+                <section className ={`w-44 ${button1}`}> 
                     <button>
                         requiem
                     </button>
