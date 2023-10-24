@@ -17,6 +17,14 @@ export default function NextPage(){
                     </button>
                 </section>
             </Link>
+
+            <Link href="/auth">
+                <section ClassNaem={`w-56 text-3xl ${button1}`}>
+                    <button>
+                        Authentication
+                    </button>
+                </section>
+            </Link>
         </main>
 
     )
