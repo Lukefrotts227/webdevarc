@@ -13,7 +13,7 @@ exports.login = (req, res) => {
     const validPassword = bcrypt.compareSync(password, user.password);
     if (!validPassword) return res.status(400).send('Invalid password.');
 
-    const token = jwt.sign({ id: user.id }, 'your-secret-key', {
+    const token = jwt.sign({ id: user.id }, 'asdfghjklkjhgfdsasdfghjmu76ytgyggh7g', {
       expiresIn: 86400 // expires in 24 hours
     });
 
